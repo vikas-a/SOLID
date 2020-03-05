@@ -1,0 +1,9 @@
+@startuml
+class Board{
+}
+class BoardPresenter{
+}
+Board -- BoardPresenter
+class BoardShaper {
+}
+@enduml

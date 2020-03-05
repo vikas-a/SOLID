@@ -1,0 +1,24 @@
+@startuml
+interface Personality{
++ greet()
+}
+
+class CasualPersonality{
+}
+class FormalPersonality{
+}
+class IntimatePersonality{
+}
+
+Personality <-- CasualPersonality
+Personality <-- FormalPersonality
+Personality <-- IntimatePersonality
+
+class Greeter{
+}
+
+Greeter -- Personality
+
+
+
+@enduml

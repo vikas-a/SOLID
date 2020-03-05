@@ -1,0 +1,14 @@
+@startuml
+interface Notifier{
++ alertWeatherCondition(String weatherCondition)
+}
+class EmailClient
+class MobileDevice
+Notifier <|-- MobileDevice
+Notifier <|-- EmailClient
+class WeatherTracker{
++ setCurrentConditions(String weatherCondition)
++ notify(Notifier)
+}
+
+@enduml

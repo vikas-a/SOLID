@@ -1,0 +1,21 @@
+@startuml
+interface FeatheredCreature{
++ molt()
+}
+interface FlyingCreature{
++ fly()
+}
+interface SwimmingCreature{
++ swim()
+}
+
+class Penguin
+class Eagle
+
+FeatheredCreature <-- Eagle
+FeatheredCreature <-- Penguin
+
+FlyingCreature <-- Eagle
+SwimmingCreature <-- Penguin
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+interface Bird{
++ fly()
++ molt()
+}
+class Eagle
+class Penguin{
++ swim()
+}
+
+Bird <|-- Eagle
+Bird <|-- Penguin
+
+@enduml

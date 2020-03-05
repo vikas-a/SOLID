@@ -1,0 +1,9 @@
+@startuml
+
+class Board{
+- ArrayList : spots
+firstRow()
+secondRow()
+thirdRow()
+}
+@enduml

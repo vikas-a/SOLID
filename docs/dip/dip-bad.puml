@@ -1,0 +1,13 @@
+@startuml
+class Emailer{
++ generateWeatherAlert()
+}
+class Phone{
++ generateWeatherAlert()
+}
+class WeatherTracker{
++ setCurrentConditions()
+}
+WeatherTracker -- Emailer
+WeatherTracker -- Phone
+@enduml
