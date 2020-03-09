@@ -4,16 +4,22 @@
 
 * Each responsibility should be separated to its own class, because each responsibility is an axis of change. Change to one responsibility may break others in the same class.
 * Following the SRP leads to small, highly focused, cohesive classes, which each do only one thing. Each of them will be easy understand and change.
+* Separate the code that different actors depend on
+* The word “cohesive” implies the SRP. Cohesion is the force that binds together the code responsible to a single actor
+* Refer [SRP](http://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html)
 
-* Bad Example : 
-  This example is derived from  Tic Tac Toe game. The bad example provides a generic Board class that does board-related things
-    *  It stores the values of spots on the board, returns the board's rows, and prints the board out to the screen. 
-    *  On the surface, everything seems legitimately related to a real-world Board object, but the Single Responsibility Principle tells us that this class is actually handling far too many responsibilities.
+### Bad example
+Consider the class `Employee`. 
+* This class violates the SRP because those three methods are responsible to three very different actors.
+* Responsibility is a family of function that serves one particular actor
+* When the needs of that actor change, it becomes the source of change for that family of functions
+* The actor for that change becomes a single source of change for that responsibiliy 
+* There are three actors : Policy, Architecture , Operations
+* All the actors using the same modules are coupled
+* When a change to the module due to one responsiblity changes the behaviour of the other responsibility, it introduces **fragility**
 
-* Good Example
-
-    Consider the Board class in the "good" example. The only thing it is responsible for is knowing the values of its spots. 
-    * It is entirely unconcerned with how those spots are being manipulated per the rules of Tic Tac Toe (rows, columns, diagonals) 
-or displayed to the user (in a console, on the web, etc.). 
-    * The `BoardShaper` and `BoardPresenter` classes are similarly focused on specific tasks.
-    * They are also only passed attributes they need; for example, `BoardShaper` objects are initialized with only a size (they don't need the whole board).
+#### Good example
+The divergent responsibilities of the `Employee` class has been moved into different classes with clear segregation
+* `EmployeeGateway` class is responsible for the persistence of the data
+* `EmployeePolicy` class is responsible for setting the policies across employees
+* `EmployeeReports` is responsible for generating formatted data for reporting purposes

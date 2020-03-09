@@ -1,9 +1,10 @@
 @startuml
 
-class Board{
-- ArrayList : spots
-firstRow()
-secondRow()
-thirdRow()
+class Employee{
+
++calculatePay()
++describeEmployee()
++save()
++setBasicSalaryPerDay(Integer basicSalaryPerDay)
 }
 @enduml

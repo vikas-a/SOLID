@@ -1,9 +1,19 @@
 @startuml
-class Board{
+class Employee{
 }
-class BoardPresenter{
+class EmployeeFacade{
 }
-Board -- BoardPresenter
-class BoardShaper {
+class EmployeeGateway{
 }
+class EmployeePolicy{
+}
+class EmployeeReports{
+}
+
+EmployeeFacade -- EmployeeGateway
+EmployeeFacade -- EmployeePolicy
+EmployeeFacade -- EmployeeReports
+
+Employee - EmployeeFacade
+
 @enduml
